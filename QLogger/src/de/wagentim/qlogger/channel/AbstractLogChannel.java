@@ -5,8 +5,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 
-import cn.wagentim.basicutils.BasicUtils;
 import cn.wagentim.basicutils.StringConstants;
+import cn.wagentim.basicutils.Validator;
 import de.wagentim.qlogger.console.Console;
 import de.wagentim.qlogger.console.SysoutConsole;
 import de.wagentim.qlogger.logger.Log;
@@ -82,7 +82,7 @@ public abstract class AbstractLogChannel implements LogChannel
 
 	private void addLog(final int level, final String text)
 	{
-		if( BasicUtils.isNullOrEmpty(text) )
+		if( Validator.isNullOrEmpty(text) )
 		{
 			return;
 		}

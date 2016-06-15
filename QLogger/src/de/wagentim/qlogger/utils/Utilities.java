@@ -1,7 +1,7 @@
 package de.wagentim.qlogger.utils;
 
-import cn.wagentim.basicutils.BasicUtils;
 import cn.wagentim.basicutils.StringConstants;
+import cn.wagentim.basicutils.Validator;
 
 public class Utilities
 {
@@ -15,7 +15,7 @@ public class Utilities
 	 */
 	public static final String textReplace(final String originalText, final String...replaceTexts)
 	{
-		if( BasicUtils.isNullOrEmpty(originalText) || null == replaceTexts )
+		if( Validator.isNullOrEmpty(originalText) || null == replaceTexts )
 		{
 			return StringConstants.EMPTY_STRING;
 		}
