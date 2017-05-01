@@ -1,13 +1,28 @@
 package de.wagentim.qlogger.channel;
 
-public class DefaultChannel extends AbstractLogChannel{
+import de.wagentim.qlogger.console.Console;
+import de.wagentim.qlogger.console.SysoutConsole;
 
-	public DefaultChannel() {
+public class DefaultChannel extends AbstractLogChannel
+{
+
+	public DefaultChannel()
+	{
 		this(null);
 	}
 
 	public DefaultChannel(final String channelName)
 	{
 		super(channelName);
+	}
+
+	@Override
+	public Console getConsole()
+	{
+		if( null == console )
+		{
+			console = new SysoutConsole();
+		}
+		return console;
 	}
 }

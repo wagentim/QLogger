@@ -8,7 +8,6 @@ import java.util.Comparator;
 import cn.wagentim.basicutils.StringConstants;
 import cn.wagentim.basicutils.Validator;
 import de.wagentim.qlogger.console.Console;
-import de.wagentim.qlogger.console.SysoutConsole;
 import de.wagentim.qlogger.logger.Log;
 import de.wagentim.qlogger.utils.Utilities;
 
@@ -23,7 +22,7 @@ public abstract class AbstractLogChannel implements LogChannel
 
 	private final String DEFAULT_CHANNEL_NAME = "Default";
 
-	private Console console = null;
+	protected Console console = null;
 
 	private String name = StringConstants.EMPTY_STRING;
 
@@ -43,26 +42,9 @@ public abstract class AbstractLogChannel implements LogChannel
 		return name;
 	}
 
-	@Override
-	public Console getConsole()
-	{
-
-		if (null == this.console)
-		{
-			this.console = new SysoutConsole();
-		}
-
-		return console;
-	}
-
 	public int getMaxLogCacheSize()
 	{
 		return this.maxSize;
-	}
-
-	public void setConsole(Console console)
-	{
-		this.console = console;
 	}
 
 	public void setMaxLogCacheSize(int maxSize)
